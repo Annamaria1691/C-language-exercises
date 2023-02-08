@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main(){
+    int i,n ;
+    scanf("%d",&n);
+    int v[n],j[n];
+    for(i=0;i<n;i++){
+        scanf("%d",&v[i]);
+        j[n]=v[n];
+        printf("%d,",v[i]);
+
+    }
+    printf("\n");
+
+    printf("%d,", v[0]);
+    for(i=1;i<n-1;i++){
+            j[i]=(v[i-1]+v[i]+v[i+1])/3;
+            printf("%d,",j[i]);
+        }
+    printf("%d,",v[n-1]);
+
+    return 0;
+
+}
