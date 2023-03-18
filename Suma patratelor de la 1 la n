@@ -1,0 +1,18 @@
+/*  Scrieti un program care demonstreaza ca suma patratelor numerelor de la 1 la n este egala cu n(n+1)(2n+1)/6*/
+#include <stdio.h>
+
+int main() {
+    int n, suma = 0, patrate;
+    printf("Introduceti un numar n pana la care se va calcula suma patratelor: ");
+    scanf("%d", &n);
+    int sumaExpresie = n * (n + 1) * (2 * n + 1) / 6;
+    for (int i = 1; i <= n; i++) {
+        patrate = i * i;
+        suma += patrate;
+    }
+    if (suma == sumaExpresie)
+        printf("Suma patratelor de la 1 la %d este %d si este egala cu n(n+1)(2n+1)/6= %d ", n, suma, sumaExpresie);
+    else
+        printf("Suma patratelor de la 1 la n nu este egala cu n(n+1)(2n+1)/6");
+    return 0;
+}
