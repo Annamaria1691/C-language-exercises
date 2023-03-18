@@ -1,0 +1,19 @@
+/*Scrieti un program care demonstreaza ca suma numerelor de la 1 la n este egala cu n(n+1)/2 */
+
+#include <stdio.h>
+
+int main() {
+    int n,suma=0;
+    printf("Introduceti un numar n pana la care se va calcula suma: ");
+    scanf("%d",&n);
+    int sumaExpresie=n*(n+1)/2;
+    for(int i=1;i<=n;i++){
+        suma+=i;
+    }
+    if(suma==sumaExpresie)
+        printf("Suma numerelor de la 1 la %d este %d si este egala cu n(n+1)/2 = %d ",n,suma,sumaExpresie);
+    else
+        printf("Suma numerelor de la 1 la n nu este egala cu n(n+1)/2");
+        
+        return 0;
+}
