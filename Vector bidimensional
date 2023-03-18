@@ -1,0 +1,29 @@
+
+/* Scrieti un program care determina elementul minim de pe linia elementului maxim dintr-un vector bidimensional.*/
+#include<stdio.h>
+int main() {
+    int vector[5][5] = {2, 5, 6, 9, 13,
+                        25, 2, 6, 4, 10,
+    };
+    int max = vector[0][0];
+    int linie = 0;
+
+    for (int i = 0; i < 5; i++) {
+        for (int j = 0; j < 5; j++) {
+            if (vector[i][j] > max) {
+                max = vector[i][j];
+                linie = i;
+            }
+        }
+    }
+    int min = vector[linie][0];
+    for (int i = 1; i < 5; i++) {
+        if (vector[linie][i] < min)
+            min = vector[linie][i];
+
+    }
+    printf("Elementul maxim este %d, elementul minim este %d si se afla pe linia %d", max, min, linie);
+
+    return 0;
+}
+
