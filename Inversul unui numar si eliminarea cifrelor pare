@@ -1,0 +1,31 @@
+/*Scrieti un program care inverseaza un numar intreg, dupa care elimina din numarul rezultat cifrele pare, daca exista, fara a inversa numarul.*/
+#include<stdio.h>
+int numarInversat(int a){
+    int p=0;
+    while(a!=0) {
+        p = p * 10 + a % 10;
+        a /= 10;
+    }
+    return p;
+}
+
+void afiseazaCifrele(int n) {
+    int r;
+    if (n == 0) {
+        return;
+    }
+    r = n % 10;
+    if (r % 2 != 0)
+        printf("Numarul ramas dupa extragerea cifrelor pare este: %d", r);
+    afiseazaCifrele(n / 10);
+}
+
+
+int main() {
+    int n, x;
+    printf("Intorduceti numarul de inversat:");
+    scanf("%d", &n);
+    x = numarInversat(n);
+    printf("numarul inversat %d\n", x);
+    afiseazaCifrele(x);
+}
