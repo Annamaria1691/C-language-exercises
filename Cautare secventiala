@@ -1,0 +1,44 @@
+/*Cautarea primei aparitii a unei valori dintr-un vector unidimensional, folosind cautarea secventiala.*/
+//ITERATIV
+#include<iostream>
+int main() {
+    int arr[6];
+    int pozitie, nrCautat;
+    std::cout << "Introduceti 6 numere in lista: " << std::endl;
+    for (int i = 0; i < 6; i++) {
+        std::cin >> arr[i];
+    }
+    std::cout << "Introduceti numarul pe care doriti sa-l gasiti: " << std::endl;
+    std::cin >> nrCautat;
+
+    for (int i = 0; i < 6; i++) {
+        if (arr[i] == nrCautat) {
+            pozitie = i + 1;
+            std::cout << "Numarul cautat a fost gasit pe pozitia: " << pozitie << std::endl;
+        }
+    }
+    if(pozitie==0)
+        std::cout<<"Numarul introdus nu se afla in lista!";
+return 0;
+}
+
+//RECURSIV
+#include <iostream>
+ int cautareSecventiala(int arr[], int n, int x){
+    n--;
+    if(n<0) {
+        return -1;
+    }
+    if(arr[n]==x){
+        return n;
+    }
+    return cautareSecventiala(arr,n,x);
+}
+int main() {
+    int arr[6] = {1, 6, 3, 4, 5, 9,};
+    int n = (sizeof(arr) / sizeof(arr[0]));
+    int x = 20;
+    int cautat = cautareSecventiala(arr, n, x);
+    cautat != -1 ? std::cout << ("A fost gasit elementul in pozitia:") << cautat : std::cout << ("Nu e in multime!");
+    return 0;
+}
