@@ -1,0 +1,30 @@
+#include <stdio.h>
+void sortare_insertie(int arr[],int n){
+    int i,j,tmp;
+    for(i=0;i<n;i++){
+        tmp=arr[i];
+        j=i-1;
+       while(tmp>arr[j] && j>=0){
+           arr[j+1]=arr[j];
+           j=j-1;
+       }
+       arr[j+1]=tmp;
+    }
+}
+int main() {
+int arr[]={0,15,21,5,8,9,10,200};
+    int n=sizeof(arr)/sizeof(arr[0]);
+    int i;
+    printf("Cifrele in ordinea initiala:");
+    for(i=0;i<n;i++){
+        printf("%d ",arr[i]);
+    }
+    printf("\n");
+    sortare_insertie(arr,n);
+    printf("Cifrele dupa sortare prin insertie decrescator:");
+    for(i=0;i<n;i++){
+        printf("%d ",arr[i]);
+    }
+
+    return 0;
+}
