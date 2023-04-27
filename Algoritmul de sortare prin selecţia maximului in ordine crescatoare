@@ -1,0 +1,32 @@
+#include <stdio.h>
+void sortare_max(int arr[],int n){
+    int i,j,max,tmp;
+    for(i=n-1;i>=1;i--){
+        max=0;
+        for(j=1;j<=i;j++){
+            if(arr[j]>arr[max]){
+                max=j;
+            }
+        }
+       tmp=arr[max];
+        arr[max]=arr[i];
+        arr[i]=tmp;
+    }
+}
+int main() {
+int arr[]={0,15,21,5,8,9,10,200};
+    int n=sizeof(arr)/sizeof(arr[0]);
+    int i;
+    printf("Cifrele in ordinea initiala:");
+    for(i=0;i<n;i++){
+        printf("%d ",arr[i]);
+    }
+    printf("\n");
+    sortare_max(arr,n);
+    printf("Cifrele dupa sortare prin selectia maximului crescator:");
+    for(i=0;i<n;i++){
+        printf("%d ",arr[i]);
+    }
+
+    return 0;
+}
